@@ -1151,7 +1151,8 @@ export class DatatableComponent implements OnInit, DoCheck, AfterViewInit {
 
       // do the opposite here
       if (!allSelected) {
-        this.selected.push(...this._internalRows.slice(first, last));
+        // TODO [solved] hierdurch kein Fehler bei HeaderSelect > 100.000 Zeilen
+        this.selected = this.selected.concat(this._internalRows.slice(first, last));
       }
     } else {
       // before we splice, chk if we currently have all selected
@@ -1160,7 +1161,8 @@ export class DatatableComponent implements OnInit, DoCheck, AfterViewInit {
       this.selected = [];
       // do the opposite here
       if (!allSelected) {
-        this.selected.push(...this.rows);
+        // TODO [solved] hierdurch kein Fehler bei HeaderSelect > 100.000 Zeilen
+        this.selected = this.selected.concat(this.rows);
       }
     }
 

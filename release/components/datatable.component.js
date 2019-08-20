@@ -866,7 +866,6 @@ var DatatableComponent = /** @class */ (function () {
      * Toggle all row selection
      */
     DatatableComponent.prototype.onHeaderSelect = function (event) {
-        var _a, _b;
         if (this.selectAllRowsOnPage) {
             // before we splice, chk if we currently have all selected
             var first = this.bodyComponent.indexes.first;
@@ -876,7 +875,8 @@ var DatatableComponent = /** @class */ (function () {
             this.selected = [];
             // do the opposite here
             if (!allSelected) {
-                (_a = this.selected).push.apply(_a, this._internalRows.slice(first, last));
+                // TODO [solved] hierdurch kein Fehler bei HeaderSelect > 100.000 Zeilen
+                this.selected = this.selected.concat(this._internalRows.slice(first, last));
             }
         }
         else {
@@ -886,7 +886,8 @@ var DatatableComponent = /** @class */ (function () {
             this.selected = [];
             // do the opposite here
             if (!allSelected) {
-                (_b = this.selected).push.apply(_b, this.rows);
+                // TODO [solved] hierdurch kein Fehler bei HeaderSelect > 100.000 Zeilen
+                this.selected = this.selected.concat(this.rows);
             }
         }
         this.select.emit({
