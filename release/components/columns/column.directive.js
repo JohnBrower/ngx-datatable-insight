@@ -30,6 +30,10 @@ var DataTableColumnDirective = /** @class */ (function () {
     __decorate([
         core_1.Input(),
         __metadata("design:type", String)
+    ], DataTableColumnDirective.prototype, "colID", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", String)
     ], DataTableColumnDirective.prototype, "name", void 0);
     __decorate([
         core_1.Input(),
