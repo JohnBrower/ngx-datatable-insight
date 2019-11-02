@@ -39,6 +39,14 @@ export interface TableColumn {
   $$valueGetter?: ValueGetter;
 
   /**
+   * TODO[solved] Zeile muss unabhängig vom Property eindeutig identifizierbar sein
+   *
+   * @type {string}
+   * @memberOf TableColumn
+   */
+  colID?: string;
+
+  /**
    * Determines if column is checkbox
    *
    * @type {boolean}

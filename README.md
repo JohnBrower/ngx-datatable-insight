@@ -7,16 +7,14 @@ Geforktes Repository von @swimlane/ngx-datatable mit Modifikationen/Bugfixes fü
 
 * Build neu Auszuführen mit "npm run package"
 
-###Änderungen (Stand 5.8.2019)
+###Änderungen (Stand 05.08.2019)
 
-* Basiert auf Coomit '(release): 15.0.2 [ad3af3c1]'
+* Basiert auf Commit '(release): 15.0.2 [ad3af3c1]'
 * Kein Fehler bei Header-Selektion über ~100.000 Zeilen
 
-* ggf. TODO: 
-    * Spalten (Columns) enthalten zusätzliches Property colID zur Identifikation 
+###Änderungen (Stand 02.11.2019)
 
-        * src/components/columns/column.directive.ts:
-            * 15 @Input() colID: any; // NEU!!!
+* Spalten (Columns) enthalten zusätzliches Property colID zur Identifikation 
 
-        * src/types/table-column.type.ts
-             * colID: any; // NEU!!!
+    * src/components/columns/column.directive.ts[17]:  @Input() colID?: string;
+    * src/types/table-column.type.ts[47]: colID?: string;

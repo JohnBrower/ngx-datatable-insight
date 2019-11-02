@@ -14,7 +14,7 @@ import { ColumnChangesService } from '../../services/column-changes.service';
 
 @Directive({ selector: 'ngx-datatable-column' })
 export class DataTableColumnDirective implements OnChanges {
-  @Input() colID: string; // TODO[solved] Zeile muss unabhängig vom property eindeutig identifizierbar sein
+  @Input() colID: string; // TODO[solved] Zeile muss unabhängig vom Property eindeutig identifizierbar sein
   @Input() name: string;
   @Input() prop: TableColumnProp;
   @Input() frozenLeft: any;
